@@ -23,8 +23,12 @@ env:
 
 
 jobs:
-  build:
+  
+  ci:
+    uses:
+      console6500/refactored-octo-fiesta/.github/workflows/python-app.yml.yml@main
 
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -33,11 +37,7 @@ jobs:
       # with sigstore/fulcio when running outside of PRs.
       id-token: write
 
-    
     steps:
-      - uses:
-          console6500/refactored-octo-fiesta/.github/workflows/python-app.yml.yml@main
-          
       - name: Checkout repository
         uses: actions/checkout@v3
 
