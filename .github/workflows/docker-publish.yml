@@ -25,12 +25,12 @@ env:
 jobs:
   
   ci:
-    permissions:
-      checks: write
+    permissions: write-all
     uses:
       console6500/refactored-octo-fiesta/.github/workflows/python-app.yml@main
 
   build:
+    needs: [ci]
     runs-on: ubuntu-latest
     permissions:
       contents: read
