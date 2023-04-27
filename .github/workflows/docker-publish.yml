@@ -25,6 +25,8 @@ env:
 jobs:
   
   ci:
+    permissions:
+      checks: write
     uses:
       console6500/refactored-octo-fiesta/.github/workflows/python-app.yml@main
 
